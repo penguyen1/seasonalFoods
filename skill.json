@@ -5,15 +5,16 @@
         "en-US": {
           "summary": "Seasonal foods for each season and how to pick the ripe ones.",
           "examplePhrases": [
-            "Alexa open chef",
-            "Alexa ask chef for a seasonal ingredient",
-            "Alexa tell chef to recommend a seasonal ingredient"
+            "Alexa open seasonal chef",
+            "Alexa ask seasonal chef for a seasonal ingredient",
+            "Alexa tell seasonal chef to recommend a seasonal ingredient"
           ],
           "keywords": [
             "chef",
-            "seasonal"
+            "seasonal",
+            "whatsinseason"
           ],
-          "name": "Chef",
+          "name": "Whats In Season",
           "description": "Know the best seasonal ingredients from each season and helpful tips on how to pick the ripest ones.\n\nTo start, say \"Alexa, launch Chef\" or \"Alexa, open Chef\".\n\nAt anytime, you can stop by saying \"Alexa, stop\""
         }
       },

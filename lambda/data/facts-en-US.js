@@ -7,7 +7,7 @@ var seasonalData = [
     "Peaches are harvested from late June through August. A golden yellow color and medium-soft flesh when gently squeezed is a great indicator for ripeness.",
 ];
 
-var SKILL_NAME = 'Chef';
+var SKILL_NAME = 'Seasonal Chef';
 var HELP_MESSAGE = 'You can say give me a seasonal ingredient, or, you can say exit... How may I help you?';
 var HELP_REPROMPT = 'I beg your pardon?';
 var STOP_MESSAGE = 'Bye, bye, butterfly!';

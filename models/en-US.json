@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "chef",
+      "invocationName": "seasonal chef",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",

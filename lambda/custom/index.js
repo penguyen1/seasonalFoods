@@ -8,7 +8,7 @@ const cookbook = require('alexa-cookbook.js');
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 
-const SKILL_NAME = 'chef';
+const SKILL_NAME = 'seasonal chef';
 const HELP_MESSAGE = 'You can say give me a seasonal ingredient, or, you can say exit... How may I help you?';
 const HELP_REPROMPT = 'I beg your pardon?';
 const FALLBACK_MESSAGE = 'Chef is busy in the kitchen right now. What else can I do for ya?';
