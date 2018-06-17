@@ -1,21 +1,13 @@
-var data = [
-    "A year on Mercury is just 88 days long.",
-    "Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.",
-    "Venus rotates counter-clockwise, possibly because of a collision in the past with an asteroid.",
-    "On Mars, the Sun appears about half the size as it does on Earth.",
-    "Earth is the only planet not named after a god.",
-    "Jupiter has the shortest day of all the planets.",
-    "The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.",
-    "The Sun contains 99.86% of the mass in the Solar System.",
-    "The Sun is an almost perfect sphere.",
-    "A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.",
-    "Saturn radiates two and a half times more energy into space than it receives from the sun.",
-    "The temperature inside the Sun can reach 15 million degrees Celsius.",
-    "The Moon is moving approximately 3.8 cm away from our planet every year."
+var seasonalData = [
+    "Strawberries are at their sweetest between April through June. A ripe strawberry will be fragrant and red through and through.",
+    "Cucumbers are best between June and September. A ripe cucumber should be bright medium to dark green and firm.",
+    "Tomatoes ripen at different times based on its variety. Nonetheless, they should all be firm, but have a little bit of give when you squeeze it.",
+    "Bell pepper peak season runs from July through September. Their skins should be glossy, taut and unwrinkled, and their stems fresh and green.",
+    "Cherry season begins in early May and ends in late August. Mature cherries are firm and juicy, but tender enough to bite into easily.",
+    "Peaches are harvested from late June through August. A golden yellow color and medium-soft flesh when gently squeezed is a great indicator for ripeness.",
 ];
 
-var SKILL_NAME = "American Space Facts";
-var GET_FACT_MESSAGE = "Here's your fact: ";
-var HELP_MESSAGE = "You can say tell me a space fact, or, you can say exit... What can I help you with?";
-var HELP_REPROMPT = "What can I help you with?";
-var STOP_MESSAGE = "Goodbye!";
+var SKILL_NAME = 'Chef';
+var HELP_MESSAGE = 'You can say give me a seasonal ingredient, or, you can say exit... How may I help you?';
+var HELP_REPROMPT = 'I beg your pardon?';
+var STOP_MESSAGE = 'Bye, bye, butterfly!';

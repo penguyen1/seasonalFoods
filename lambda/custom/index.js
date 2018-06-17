@@ -8,52 +8,44 @@ const cookbook = require('alexa-cookbook.js');
 //TODO: The items below this comment need your attention.
 //=========================================================================================================================================
 
-const SKILL_NAME = 'Space Facts';
-const GET_FACT_MESSAGE = 'Here\'s your fact: ';
-const HELP_MESSAGE = 'You can say tell me a space fact, or, you can say exit... What can I help you with?';
-const HELP_REPROMPT = 'What can I help you with?';
-const FALLBACK_MESSAGE = 'The Space Facts skill can\'t help you with that.  It can help you discover facts about space if you say tell me a space fact. What can I help you with?';
-const FALLBACK_REPROMPT = 'What can I help you with?';
-const STOP_MESSAGE = 'Goodbye!';
+const SKILL_NAME = 'chef';
+const HELP_MESSAGE = 'You can say give me a seasonal ingredient, or, you can say exit... How may I help you?';
+const HELP_REPROMPT = 'I beg your pardon?';
+const FALLBACK_MESSAGE = 'Chef is busy in the kitchen right now. What else can I do for ya?';
+const FALLBACK_REPROMPT = 'Say what?';
+const STOP_MESSAGE = 'Bye, bye, butterfly!';
 
 //=========================================================================================================================================
 //TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/lambda/data
 //=========================================================================================================================================
 
-const data = [
-  'A year on Mercury is just 88 days long.',
-  'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.',
-  'Venus rotates counter-clockwise, possibly because of a collision in the past with an asteroid.',
-  'On Mars, the Sun appears about half the size as it does on Earth.',
-  'Earth is the only planet not named after a god.',
-  'Jupiter has the shortest day of all the planets.',
-  'The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.',
-  'The Sun contains 99.86% of the mass in the Solar System.',
-  'The Sun is an almost perfect sphere.',
-  'A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.',
-  'Saturn radiates two and a half times more energy into space than it receives from the sun.',
-  'The temperature inside the Sun can reach 15 million degrees Celsius.',
-  'The Moon is moving approximately 3.8 cm away from our planet every year.',
+const seasonalData = [
+  'Strawberries are at their sweetest between April through June. A ripe strawberry will be fragrant and red through and through.',
+  'Cucumbers are best between June and September. A ripe cucumber should be bright medium to dark green and firm.',
+  'Tomatoes ripen at different times based on its variety. Nonetheless, they should all be firm, but have a little bit of give when you squeeze it.',
+  'Bell pepper peak season runs from July through September. Their skins should be glossy, taut and unwrinkled, and their stems fresh and green.',
+  'Cherry season begins in early May and ends in late August. Mature cherries are firm and juicy, but tender enough to bite into easily.',
+  'Peaches are harvested from late June through August. A golden yellow color and medium-soft flesh when gently squeezed is a great indicator for ripeness.',
 ];
 
 //=========================================================================================================================================
 //Editing anything below this line might break your skill.
 //=========================================================================================================================================
 
-const GetNewFactHandler = {
+const GetSeasonalIngredientHandler = {
   canHandle(handlerInput) {
     const request = handlerInput.requestEnvelope.request;
     return request.type === 'LaunchRequest'
       || (request.type === 'IntentRequest'
-        && request.intent.name === 'GetNewFactIntent');
+        && request.intent.name === 'GetSeasonalIngredientIntent');
   },
   handle(handlerInput) {
-    const randomFact = cookbook.getRandomItem(data);
-    const speechOutput = GET_FACT_MESSAGE + randomFact;
+    const randomIngredient = cookbook.getRandomItem(seasonalData);
+    const speechOutput = randomIngredient;
 
     return handlerInput.responseBuilder
       .speak(speechOutput)
-      .withSimpleCard(SKILL_NAME, randomFact)
+      .withSimpleCard(SKILL_NAME, randomIngredient)
       .getResponse();
   },
 };
@@ -133,7 +125,7 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    GetNewFactHandler,
+    GetSeasonalIngredientHandler,
     HelpHandler,
     ExitHandler,
     FallbackHandler,
