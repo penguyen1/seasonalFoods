@@ -2,11 +2,7 @@
 /* eslint-disable  no-console */
 
 const Alexa = require('ask-sdk-core');
-const cookbook = require('alexa-cookbook.js');
-
-//=========================================================================================================================================
-//TODO: The items below this comment need your attention.
-//=========================================================================================================================================
+// const cookbook = require('alexa-cookbook.js');
 
 const SKILL_NAME = 'seasonal chef';
 const HELP_MESSAGE = 'You can say give me a seasonal ingredient, or, you can say exit... How may I help you?';
@@ -14,10 +10,6 @@ const HELP_REPROMPT = 'I beg your pardon?';
 const FALLBACK_MESSAGE = 'Chef is busy in the kitchen right now. What else can I do for ya?';
 const FALLBACK_REPROMPT = 'Say what?';
 const STOP_MESSAGE = 'Bye, bye, butterfly!';
-
-//=========================================================================================================================================
-//TODO: Replace this data with your own.  You can find translations of this data at http://github.com/alexa/skill-sample-node-js-fact/lambda/data
-//=========================================================================================================================================
 
 const seasonalData = [
   'Strawberries are at their sweetest between April through June. A ripe strawberry will be fragrant and red through and through.',
@@ -28,10 +20,6 @@ const seasonalData = [
   'Peaches are harvested from late June through August. A golden yellow color and medium-soft flesh when gently squeezed is a great indicator for ripeness.',
 ];
 
-//=========================================================================================================================================
-//Editing anything below this line might break your skill.
-//=========================================================================================================================================
-
 const GetSeasonalIngredientHandler = {
   canHandle(handlerInput) {
     const request = handlerInput.requestEnvelope.request;
@@ -40,12 +28,15 @@ const GetSeasonalIngredientHandler = {
         && request.intent.name === 'GetSeasonalIngredientIntent');
   },
   handle(handlerInput) {
-    const randomIngredient = cookbook.getRandomItem(seasonalData);
-    const speechOutput = randomIngredient;
+    // const randomIngredient = cookbook.getRandomItem(seasonalData);
+    const seasonalArr = seasonalData;
+    const seasonalIndex = Math.floor(Math.random() * seasonalArr.length);
+    const seasonalItem = seasonalArr[seasonalIndex];
+    const speechOutput = seasonalItem;
 
     return handlerInput.responseBuilder
       .speak(speechOutput)
-      .withSimpleCard(SKILL_NAME, randomIngredient)
+      .withSimpleCard(SKILL_NAME, seasonalItem)
       .getResponse();
   },
 };
@@ -60,23 +51,6 @@ const HelpHandler = {
     return handlerInput.responseBuilder
       .speak(HELP_MESSAGE)
       .reprompt(HELP_REPROMPT)
-      .getResponse();
-  },
-};
-
-const FallbackHandler = {
-  // 2018-May-01: AMAZON.FallackIntent is only currently available in en-US locale.
-  //              This handler will not be triggered except in that locale, so it can be
-  //              safely deployed for any locale.
-  canHandle(handlerInput) {
-    const request = handlerInput.requestEnvelope.request;
-    return request.type === 'IntentRequest'
-      && request.intent.name === 'AMAZON.FallbackIntent';
-  },
-  handle(handlerInput) {
-    return handlerInput.responseBuilder
-      .speak(FALLBACK_MESSAGE)
-      .reprompt(FALLBACK_REPROMPT)
       .getResponse();
   },
 };
@@ -122,13 +96,13 @@ const ErrorHandler = {
 };
 
 const skillBuilder = Alexa.SkillBuilders.custom();
+// const skillBuilder = Alexa.SkillBuilders.standard();
 
 exports.handler = skillBuilder
   .addRequestHandlers(
     GetSeasonalIngredientHandler,
     HelpHandler,
     ExitHandler,
-    FallbackHandler,
     SessionEndedRequestHandler
   )
   .addErrorHandlers(ErrorHandler)
