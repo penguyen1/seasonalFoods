@@ -14,7 +14,7 @@ var reprompt = '';
 
 const seasonalFoodData = [
     {
-        season: "SPRING",
+        season: "spring",
         fact: "my name is spring",
         foods: [
           "blah blah blah Spring fact",
@@ -23,7 +23,7 @@ const seasonalFoodData = [
         ]
     },
     {
-        season: "SUMMER",
+        season: "summer",
         fact: "my name is summer",
         foods: [
           "Strawberries are at their sweetest between April through June. A ripe strawberry will be fragrant and red through and through.",
@@ -35,7 +35,7 @@ const seasonalFoodData = [
         ]
     },
     {
-        season: "FALL",
+        season: "fall",
         fact: "my name is fall",
         foods: [
           "blah blah blah Fall fact",
@@ -44,7 +44,7 @@ const seasonalFoodData = [
         ]
     },
     {
-        season: "WINTER",
+        season: "winter",
         fact: "my name is winter",
         foods: [
           "blah blah blah winter fact",
@@ -116,7 +116,7 @@ function resolveCanonical(slot){
       canonical = slot.value;
   };
   return canonical;
-};
+}
 
 function getSeasonalFood(data, propValue) {
   for (var i=0; i < data.length; i++) {
