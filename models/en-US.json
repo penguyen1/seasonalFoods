@@ -1,8 +1,12 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "seasonal chef",
+      "invocationName": "seasonal foods",
       "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
         {
           "name": "AMAZON.CancelIntent",
           "samples": []
@@ -16,22 +20,52 @@
           "samples": []
         },
         {
-          "name": "AMAZON.FallbackIntent",
-          "samples": []
+          "name": "GetSeasonalFoodIntent",
+          "slots": [
+            {
+              "name": "season",
+              "type": "SEASONS_IN_THE_YEAR"
+            }
+          ],
+          "samples": [
+            "tell me what's in season for {season}",
+            "give me a seasonal food in the {season}"
+          ]
         },
         {
-          "name": "GetSeasonalIngredientIntent",
-          "samples": [
-            "a seasonal food",
-            "a seasonal ingredient",
-            "give me a seasonal food",
-            "recommend a seasonal food",
-            "give me a seasonal ingredient",
-            "recommend a seasonal ingredient",
-            "name a seasonal food",
-            "name a seasonal ingredient"
-          ],
-          "slots": []
+          "name": "GetRandomFactIntent",
+          "slots": [],
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "SEASONS_IN_THE_YEAR",
+          "values": [
+            {
+              "name": {
+                "value": "spring"
+              }
+            },
+            {
+              "name": {
+                "value": "winter"
+              }
+            },
+            {
+              "name": {
+                "value": "fall",
+                "synonyms": [
+                    "autumn"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "summer"
+              }
+            }
+          ]
         }
       ]
     }
