@@ -1,46 +1,87 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "seasonal foods",
+      "invocationName": "seasonal food",
       "intents": [
-        {
-          "name": "AMAZON.FallbackIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "GetSeasonalFoodIntent",
-          "slots": [
-            {
-              "name": "season",
-              "type": "SEASONS_IN_THE_YEAR"
-            }
-          ],
-          "samples": [
-            "tell me what's in season for {season}",
-            "give me a seasonal food in the {season}"
-          ]
-        },
-        {
-          "name": "GetRandomFactIntent",
-          "slots": [],
-          "samples": []
-        }
+          {
+            "name": "AMAZON.FallbackIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          },
+          {
+            "name": "GetSeasonalFoodIntent",
+            "slots": [
+              {
+                "name": "season",
+                "type": "SEASONS"
+              }
+            ],
+            "samples": [
+              "something seasonal during the {season}",
+              "something seasonal in the {season}",
+              "something that is in season during the {season}",
+              "something that is in season in the {season}",
+              "something that is seasonal during the {season}",
+              "something that is seasonal in the {season}",
+              "seasonal food during the {season}",
+              "seasonal food in the {season}",
+              "foods seasonal during the {season}",
+              "foods seasonal in the {season}",
+              "tell me a seasonal {season} food",
+              "give me a seasonal {season} food",
+              "name a seasonal {season} food",
+              "seasonal {season} food",
+              "what foods are seasonal during the {season}",
+              "what foods are seasonal in the {season}",
+              "what foods are in season during the {season}",
+              "what foods are in season in the {season}",
+              "give me a seasonal food during the {season}",
+              "give me a seasonal food in the {season}",
+              "what's in season during the {season}",
+              "what's in season in the {season}"
+            ]
+          },
+          {
+            "name": "GetRandomFactIntent",
+            "slots": [],
+            "samples": [
+              "suprise me with an interesting seasonal food fact",
+              "suprise me with an interesting food fact",
+              "suprise me with an interesting fact",
+              "suprise me with a seasonal food fact",
+              "suprise me with a food fact",
+              "suprise me with a fact",
+              "tell me something interesting",
+              "tell me something random",
+              "give me an interesting seasonal food fact",
+              "give me an interesting food fact",
+              "give me an interesting fact",
+              "tell me an interesting seasonal food fact",
+              "tell me an interesting food fact",
+              "tell me an interesting fact",
+              "give me a random seasonal food fact",
+              "give me a random food fact",
+              "give me a random fact",
+              "tell me a random seasonal food fact",
+              "tell me a random food fact",
+              "tell me a random fact"
+            ]
+          }
       ],
       "types": [
         {
-          "name": "SEASONS_IN_THE_YEAR",
+          "name": "SEASONS",
           "values": [
             {
               "name": {
@@ -56,7 +97,7 @@
               "name": {
                 "value": "fall",
                 "synonyms": [
-                    "autumn"
+                  "autumn"
                 ]
               }
             },
