@@ -1,7 +1,7 @@
 // 'use strict';
 const Alexa = require('alexa-sdk'); // Alexa Skills Kit SDK for NodeJS
 const seasonalFoods = require('./data/seasonalFoodData.js');
-// const randomFacts = require('./data/randomFactData.js');
+const randomFacts = require('./data/randomFactData.js');
 
 const handlers = {
   'LaunchRequest': function(){
@@ -19,9 +19,7 @@ const handlers = {
   'GetRandomFactIntent': function(){
     // triggered when user says "give me a random food fact"
     let reprompt = 'Want me to repeat that?';
-    // this.emit(':ask', getFact(randomFacts), reprompt);
-    
-    this.emit(':tell', 'Ok, here is a random seasonal food fact.');
+    this.emit(':ask', getFact(randomFacts), reprompt);
   },
   'AMAZON.CancelIntent': function(){
     // triggered when user says "Cancel"
